@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .flexProducts {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 1rem 1rem 1rem;
+  }
+
+  .gridProducts {
+    display: grid ;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr ;
+    grid-gap: 1rem;
+  }
+
+  .gridProducts_main--img img {
+    width: 100%;
+    height: auto;
+  }
+
+  .gridProducts_main--bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem ;
+  }
+
+  .totalBox {
+    padding: 1rem;
+    border: 1px black solid;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-size: 50px;
+  }

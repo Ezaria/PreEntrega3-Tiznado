@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Productos Seleccionados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="flexProducts">
+        <div class="gridProducts">
+        <div class="gridProducts_main">
+            <div class="gridProducts_main--img">
+                <img src="../images/producto1.jpg" alt="Camisa Negra"></a>
+            </div>
+            <div class="gridProducts_main--bottom">
+                    <div class="gridProducts_main--bottomHeader"> Camise Negra </div>
+                    <div class="gridProducts_main--bottomSubtitle">Diseño clasico</div>
+                    <div class="gridProducts_main--bottomPrice">
+                        $20000
+                    </div>
+                    <button class="buttonProducto1" onclick="agregarProducto(producto1)"> Agregar al carro </button>
+            </div>
+        </div>
+
+        <div class="gridProducts_main">
+            <div class="gridProducts_main--img">
+                <img src="../images/producto2.jpg" alt="camisa verde "></a>
+            </div>
+            <div class="gridProducts_main--bottom">
+                    <div class="gridProducts_main--bottomHeader"> Camisa verde</div>
+                    <div class="gridProducts_main--bottomSubtitle">Diseño Moderno</div>
+                    <div class="gridProducts_main--bottomPrice">
+                        $13000
+                    </div>
+                    <button class="buttonProducto2" onclick="agregarProducto(producto2)""> Agregar al carro </button>
+                
+            </div>
+        </div>
+
+        <div class="gridProducts_main">
+            <div class="gridProducts_main--img">
+                <img src="../images/producto3.jpg" alt="Chaqueta verde"></a>
+            </div>
+            <div class="gridProducts_main--bottom">
+                
+                    <div class="gridProducts_main--bottomHeader"> Chaqueta verde </div>
+                    <div class="gridProducts_main--bottomSubtitle">Diseño invierno</div>
+                    <div class="gridProducts_main--bottomPrice">
+                        $19000
+                    </div>
+                    <button class="buttonProducto3" onclick="agregarProducto(producto3)"> Agregar al carro </button>
+            </div>
+        </div>
+        <div class="gridProducts_main">
+            <div class="gridProducts_main--img">
+                <img src="../images/producto4.jpg" alt="Polar Ngro"></a>
+            </div>
+            <div class="gridProducts_main--bottom">
+                
+                    <div class="gridProducts_main--bottomHeader"> Polar Negro </div>
+                    <div class="gridProducts_main--bottomSubtitle">Diseño Indoor</div>
+                    <div class="gridProducts_main--bottomPrice">
+                        $23000
+                    </div>
+                    <button class="buttonProducto4" onclick="agregarProducto(producto4)"> Agregar al carro </button>
+            </div>
+        </div>
+        <div class="gridProducts_main">
+            <div class="gridProducts_main--img">
+                <img src="../images/producto5.jpg" alt="Camisa con nombre SEOUL"></a>
+            </div>
+            <div class="gridProducts_main--bottom">
+                
+                    <div class="gridProducts_main--bottomHeader"> Camisa Seoul </div>
+                    <div class="gridProducts_main--bottomSubtitle">Diseño Deportivo</div>
+                    <div class="gridProducts_main--bottomPrice">
+                        $45000
+                    </div>
+                    <button class="buttonProducto5" onclick="agregarProducto(producto5)"> Agregar al carro </button>
+            </div>
+        </div>
+        <div class="gridProducts_main">
+            <div class="gridProducts_main--img">
+                <img src="../images/producto6.jpg" alt="Gorro gris"></a>
+            </div>
+            <div class="gridProducts_main--bottom">
+                
+                    <div class="gridProducts_main--bottomHeader"> Gorro gris </div>
+                    <div class="gridProducts_main--bottomSubtitle">Diseño Street</div>
+                    <div class="gridProducts_main--bottomPrice">
+                        $7000
+                    </div>
+                    <button class="buttonProducto6" onclick="agregarProducto(producto6)"> Agregar al carro </button>
+            </div>
+        </div>
+        <div class="gridProducts_main">
+            <div class="gridProducts_main--img">
+                <img src="../images/producto7.jpg" alt=" Camisa blanca"></a>
+            </div>
+            <div class="gridProducts_main--bottom">
+                
+                    <div class="gridProducts_main--bottomHeader"> Camisa blanca </div>
+                    <div class="gridProducts_main--bottomSubtitle">Diseño Bicicleta</div>
+                    <div class="gridProducts_main--bottomPrice">
+                        $15000
+                    </div>
+                    <button class="buttonProducto7" onclick="agregarProducto(producto7)"> Agregar al carro </button>
+            </div>
+        </div>
+
+        <div class="gridProducts_main">
+            <div class="gridProducts_main--img">
+                <img src="../images/producto8.jpg" alt="Camisa Estampado Militar"></a>
+            </div>
+            <div class="gridProducts_main--bottom">
+                
+                    <div class="gridProducts_main--bottomHeader"> Camisa Estampado Militar </div>
+                    <div class="gridProducts_main--bottomSubtitle">Diseño Bicicleta</div>
+                    <div class="gridProducts_main--bottomPrice">
+                        $18000
+                    </div>
+                    <button class="buttonProducto8" onclick="agregarProducto(producto8)"> Agregar al carro </button>
+            </div>
+        </div>
+        <div class="gridProducts_main">
+            <div class="gridProducts_main--img">
+                <img src="../images/producto9.jpg" alt="Camisa estampado militar rosado"></a>
+            </div>
+            <div class="gridProducts_main--bottom">
+                
+                    <div class="gridProducts_main--bottomHeader"> Camisa estampado militar rosado</div>
+                    <div class="gridProducts_main--bottomSubtitle">Diseño clasico</div>
+                    <div class="gridProducts_main--bottomPrice">
+                        $13000
+                    </div>
+                    <button class="buttonProducto9" onclick="agregarProducto(producto9)"> Agregar al carro </button>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="total">
+        <div class="totalBox">
+            Total $: 
+            <div class="totalPrice">0</div>
+            Productos: 
+            <div class="totalList">Nada Agregado </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <script src="./carroDeCompra.js"></script>
+</body>
+</html>
