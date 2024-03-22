@@ -166,6 +166,7 @@ function limpiarCarro() {
     crearProducto();
     localStorage.setItem("data", JSON.stringify(lista));
     calcular()
+    montoTotal()
 }
 
 
