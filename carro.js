@@ -109,8 +109,8 @@ let lista = JSON.parse(localStorage.getItem('data')) || [];
   
     calcular();
     actualizar(elementoSeleccionado)
-    crearProducto();
     localStorage.setItem("data", JSON.stringify(lista));
+    crearProducto();
   
   };
 
@@ -125,8 +125,8 @@ function quitar(id) {
     }
     actualizar(elementoSeleccionado);
     lista = lista.filter((x) => x.item !== 0);
+    localStorage.setItem("data", JSON.stringify(lista));
     crearProducto();
-    localStorage.setItem("data", JSON.stringify(basket));
   };
 
 
@@ -135,7 +135,6 @@ function actualizar(id) {
     document.getElementById(id).innerHTML = buscar.item;
 
     calcular();
-    montoTotal();
 }
 
 
