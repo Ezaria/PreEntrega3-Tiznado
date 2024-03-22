@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Productos Seleccionados</title>
+    <title>Carro de Compra</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+
 </head>
 <body>
 
@@ -21,33 +22,19 @@
             <div id="cartAmount" class="cartAmount">0</div>
           </div>
         </a>
-    
     </section>
 
-    <section class="flexProducts" id="flexProducts">
-        <div class="gridProducts" id="gridProducts">
-   
-        </div>
+    <section class="totalCarro">
+        <h2>Total: 0</h2>
+        <button class="removeAll" onclick="clearCart()"> Limpiar Carro</button>
     </section>
 
-    <section class="total">
-        <div class="totalBox">
-            Total $: 
-            <div class="totalPrice">0</div>
-            Productos: 
-            <ul id="totalItems">
-               
-            </ul>
-        </div>
+    <section class="flexItems" id="flexItems">
+
     </section>
-
-
-
-
-
 
     <script src="./productos.js"></script>
-    <script src="./tienda.js"></script>
-  
+    <script src="./carro.js"></script>
+    
 </body>
 </html>

@@ -45,4 +45,69 @@
   }
 
 
+  .navbar {
+    display: flex;
+    background-color: black;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .navbar a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .cartAmount {
+    background-color: white;
+    color:black;
+    border-radius: 100%;
+    align-self: center;
+    
+  }
+
+
+  .flexItems {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 1rem 1rem 1rem;
+
+  }
+
+  .gridItems {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1fr;
+  }
+
+  .gridItems img {
+    width: 100%;
+    height: auto;
+
+  }
+
+  .totalCarro {
+    display: flex;
+    justify-content: center;
+    padding-top: 1em;
+    
+  }
+
+  .totalCarro h2{
+    padding-right: 1em;
+  }
+
+ 
+
+  .buttons {
+    display: flex;
+    flex-direction: row;
+  }
   
+  .itemsDetail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 1em;
+  }
