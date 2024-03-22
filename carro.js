@@ -3,6 +3,7 @@ let lista = JSON.parse(localStorage.getItem('data')) || [];
 
 
 
+
   function crearProducto() {
 
     if (lista != 0) {
@@ -47,8 +48,6 @@ let lista = JSON.parse(localStorage.getItem('data')) || [];
                 itemsDetail.appendChild(buttons)
 
                 
-                
-                
                 const materialIconsQuitar = document.createElement('i');
                 materialIconsQuitar.classList.add('material-icons');
                 materialIconsQuitar.textContent = 'remove';
@@ -57,7 +56,7 @@ let lista = JSON.parse(localStorage.getItem('data')) || [];
 
                 const unidades = document.createElement('h3');
                 unidades.classList.add('unidades');
-                unidades.id = productos[j].id
+                unidades.id = productos[j].nombre;
                 unidades.textContent = lista[i].item;
                 buttons.appendChild(unidades)
 
@@ -70,6 +69,7 @@ let lista = JSON.parse(localStorage.getItem('data')) || [];
 
                 const totalItems = document.createElement('h2');
                 totalItems.classList.add('totalItems');
+                totalItems.id = productos[j].id
                 let precio = productos[j].precio
                 let items = lista[i].item
                 totalItems.textContent = `Total:$ ${precio*items}`;
@@ -106,11 +106,13 @@ let lista = JSON.parse(localStorage.getItem('data')) || [];
     else {
       buscar.item += 1;
     }
+
+    console.log(lista)
   
     calcular();
     actualizar(elementoSeleccionado)
     localStorage.setItem("data", JSON.stringify(lista));
-    crearProducto();
+    
   
   };
 
@@ -126,7 +128,7 @@ function quitar(id) {
     actualizar(elementoSeleccionado);
     lista = lista.filter((x) => x.item !== 0);
     localStorage.setItem("data", JSON.stringify(lista));
-    crearProducto();
+    
   };
 
 
@@ -134,14 +136,73 @@ function actualizar(id) {
     let buscar = lista.find((elemento) =>elemento.id === id);
     document.getElementById(id).innerHTML = buscar.item;
 
+    montoItems()
     calcular();
 }
 
+function limpiarCarro() {
+    lista = [];
+    crearProducto();
+    localStorage.setItem("data", JSON.stringify(lista));
+    calcular()
+}
 
-  function calcular() {
+
+function calcular() {
     let numeroProductosTotal = document.getElementById('cartAmount')
     numeroProductosTotal.innerHTML = lista.map((producto) => producto.item).reduce((x, y) => x + y,0)
     
   };
   
   calcular();
+
+function montoItems(){
+
+    for (let i=0; i < lista.length ; i++) {
+        for (let j=0; j < productos.length; j++) {
+            if (lista[i].id === productos[j].id) {
+
+                const subtotal = productos[j].precio*lista[i].item;
+
+                const totalItems = document.getElementById(lista[i].id)
+                totalItems.textContent = `Total:$ ${subtotal}`;
+
+
+                const unidades = document.getElementById(productos[j].nombre)
+                unidades.textContent = lista[i].item;
+
+            }
+        }
+    }
+
+}
+
+  function montoTotal() {
+    // Verifica si hay elementos en la lista
+    if (lista.length > 0) {
+      // Calcula el monto total de los productos en la lista
+      let montoTotal = 0;
+  
+      lista.forEach((elemento) => {
+        // Extrae información del elemento
+        const { item, id } = elemento;
+  
+        // Busca el producto correspondiente en la lista de productos
+        const producto = productos.find((producto) => producto.id === id);
+  
+        // Si encuentra el producto, calcula el subtotal y lo suma al monto total
+        if (producto) {
+          const subtotal = item * producto.precio;
+          montoTotal += subtotal;
+        }
+      });
+  
+      // Muestra el monto total en la consola y en el elemento HTML con ID "total"
+      console.log("Monto total:", montoTotal);
+      const elementoTotal = document.getElementById("total");
+      elementoTotal.textContent = `Total: $${montoTotal}`;
+    }
+  }
+
+montoTotal()
+

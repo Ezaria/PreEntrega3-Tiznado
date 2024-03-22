@@ -28,22 +28,7 @@
     align-items: center;
   }
 
-  .total {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1rem ;
-  }
-
-  .totalBox {
-    padding: 1rem;
-    border: 1px black solid;
-    border-radius: 5px;
-    background-color: black;
-    color: white;
-    font-size: 50px;
-  }
-
+ 
 
   .navbar {
     display: flex;
@@ -64,7 +49,6 @@
     color:black;
     border-radius: 100%;
     align-self: center;
-    
   }
 
 
@@ -87,14 +71,14 @@
 
   }
 
-  .totalCarro {
+  .totalEliminar {
     display: flex;
     justify-content: center;
     padding-top: 1em;
     
   }
 
-  .totalCarro h2{
+  .totalEliminar h2{
     padding-right: 1em;
   }
 
