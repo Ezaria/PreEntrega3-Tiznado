@@ -18,6 +18,7 @@ let lista = JSON.parse(localStorage.getItem('data')) || [];
 
 
                 const gridItems = document.createElement('div')
+                gridItems.id = `producto-${lista[i].id}`
                 gridItems.classList.add('gridItems');
 
                 const imagen = document.createElement('img');
@@ -40,7 +41,7 @@ let lista = JSON.parse(localStorage.getItem('data')) || [];
 
                 const itemsPrecio = document.createElement('p');
                 itemsPrecio.classList.add('itemsPrecio');
-                itemsPrecio.textContent = productos[j].precio;
+                itemsPrecio.textContent =  `Monto unitario: $${productos[j].precio}`;
                 itemsTitulo.appendChild(itemsPrecio);
 
                 const buttons = document.createElement('div');
@@ -107,9 +108,8 @@ let lista = JSON.parse(localStorage.getItem('data')) || [];
       buscar.item += 1;
     }
 
-    console.log(lista)
+    
   
-    calcular();
     actualizar(elementoSeleccionado)
     localStorage.setItem("data", JSON.stringify(lista));
     
@@ -134,10 +134,31 @@ function quitar(id) {
 
 function actualizar(id) {
     let buscar = lista.find((elemento) =>elemento.id === id);
-    document.getElementById(id).innerHTML = buscar.item;
 
-    montoItems()
+    if (buscar.item === 0) {
+      const ocultar = document.getElementById(`producto-${id}`);
+      ocultar.style.display = "none";
+
+ 
+      lista = lista.filter(elemento => elemento.item !== 0 )
+      montoTotal()
+    }
+
+    else {
+      document.getElementById(id).innerHTML = buscar.item;
+    }
+
+    if (lista.length === 0 ) {
+        const flexItems = document.getElementById('flexItems')
+        flexItems.textContent = "No hay nada en el carro"
+        montoTotal()
+    
+    }
+
+    montoItems();
+    montoTotal()
     calcular();
+    console.log(lista)
 }
 
 function limpiarCarro() {
@@ -177,7 +198,7 @@ function montoItems(){
 
 }
 
-  function montoTotal() {
+function montoTotal() {
     // Verifica si hay elementos en la lista
     if (lista.length > 0) {
       // Calcula el monto total de los productos en la lista
@@ -198,10 +219,17 @@ function montoItems(){
       });
   
       // Muestra el monto total en la consola y en el elemento HTML con ID "total"
-      console.log("Monto total:", montoTotal);
       const elementoTotal = document.getElementById("total");
       elementoTotal.textContent = `Total: $${montoTotal}`;
+
     }
+
+    if (lista.length === 0 ) {
+
+      const elementoTotal = document.getElementById("total");
+      elementoTotal.textContent = "Total: $0";
+
+  }
   }
 
 montoTotal()
