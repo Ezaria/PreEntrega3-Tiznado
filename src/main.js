@@ -58,9 +58,27 @@ function crearProducto() {
 
       const boton = document.createElement('button');
       boton.classList.add('buttonProducto');
-      
+      boton.id = "toastify"
       boton.textContent = 'Agregar';
       boton.setAttribute("onclick",`agregar(${producto.id})`);
+
+      boton.addEventListener('click', () => {
+        Toastify({
+        text: "Producto Agregado",
+        duration: 1000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        onClick: function(){} // Callback after click
+        }).showToast(); 
+      })
+     
 
       gridProducts_main_bottom.appendChild(boton)
   
@@ -110,32 +128,3 @@ function calcular() {
 };
 
 calcular();
-
-
-
-
-for (var i = 0; i < 1; i++ ) {
-
-  const tost = document.getElementById('toastify')
-  tost.addEventListener('click', () => {
-    Toastify({
-    text: "Producto Agregado",
-    duration: 800,
-    destination: "https://github.com/apvarun/toastify-js",
-    newWindow: true,
-    close: true,
-    gravity: "bottom", // `top` or `bottom`
-    position: "right", // `left`, `center` or `right`
-    stopOnFocus: true, // Prevents dismissing of toast on hover
-    style: {
-      background: "linear-gradient(to right, #00b09b, #96c93d)",
-    },
-    onClick: function(){} // Callback after click
-    }).showToast(); 
-  })
-  
-  
-  tost.textContent ="hola que hace"
-
-
-}
