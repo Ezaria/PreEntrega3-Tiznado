@@ -64,16 +64,19 @@ function crearProducto() {
 
       boton.addEventListener('click', () => {
         Toastify({
-        text: "Producto Agregado",
-        duration: 1000,
-        destination: "https://github.com/apvarun/toastify-js",
+        text: `🛒 ${producto.nombre}`,
+        duration: 3000,
+        destination: "carro.html",
         newWindow: true,
         close: true,
         gravity: "bottom", // `top` or `bottom`
         position: "right", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
-          background: "linear-gradient(to right, #00b09b, #96c93d)",
+          background: "linear-gradient(to right, rgb(0, 0, 0), rgb(187, 187, 187))",
+          transform: "translate(0px)",
+          bottom: "15px",
+          borderRadius: "20px",
         },
         onClick: function(){} // Callback after click
         }).showToast(); 
